@@ -1,0 +1,75 @@
+.back{
+    background-color: #4B515D;
+    background-image: url(/assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.back1{
+    background-color: transparent;
+    border-radius: 35px;
+    border: solid 1px rgb(22, 21, 21);
+}
+.back2{
+    color: #1C2331;
+}
+.back3{
+    color: #868B94
+}
+.in{
+    font-size: 1rem;
+}
+
+.form{
+    
+    position: relative;
+}
+
+.form .bi-search{
+
+    position: absolute;
+    top:12px;
+    left: 15px;
+    font-size: 20px;
+    color: #0a0a0a;
+
+}
+
+.form span{
+
+     position: absolute;
+    right: 10px;
+    top: 5px;
+    padding: 2px;
+    border-left: 1px solid #040404;
+
+}
+
+.left-pan{
+    padding-left: 5px;
+}
+
+.left-pan i{
+    font-size: 28px;
+   padding-left: 10px;
+}
+
+.form-input{
+    background-color: transparent;
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+    border-color: transparent;
+    border-bottom: 2px solid #040404;
+}
+.form-input:hover{
+    border: 2px solid #040404;
+}
+.form-input:focus{
+    outline: none;
+    box-shadow: none;
+  }
+.button{
+    background-color: transparent;
+    color: transparent;
+    border: none;
+}

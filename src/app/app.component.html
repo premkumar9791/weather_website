@@ -1,0 +1,111 @@
+<section class="vh-100 back  " >
+    <div class="container shadow rounded">
+       <h1 class="display-1 text-center ">Weather</h1>
+    </div>
+    <div class="container mb-5  ">
+        <div class="container py-5 h-100">
+            <div class="row height d-flex justify-content-center">
+                <div class="col-md-4">
+                  <div class="form">
+                    <button class="bi bi-search button" (click)="getWeather()" title="search"></button>
+                    
+                    <input type="text" class="form-control form-input shadow rounded" [(ngModel)]="city"  placeholder="Search country...">
+                    <span class="left-pan"><i class="bi bi-mic"></i></span>
+                    
+                  </div>
+                </div>
+              </div>
+    </div>
+     
+
+
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4">
+  
+          <div class="card back1 shadow ">
+            <div class="card-body p-4">
+  
+              <div class="d-flex" *ngIf="weatherData; else placeholder" >
+                <h6 class="flex-grow-1" >{{ weatherData.name }}</h6>
+                <h6>{{ liveTime }}</h6>
+              </div>
+              <ng-template #placeholder  >
+                <div  class="d-flex" >
+                <h6 class="flex-grow-1">{{ placehold[0].cityname}}</h6>
+                <h6>{{ liveTime }}</h6>
+              </div>
+              </ng-template>
+              <div class="d-flex flex-column text-center mt-5 mb-4" *ngIf="weatherData ; else placeholder2">
+                <h6 class="display-4 mb-0 font-weight-bold back2"> {{ weatherData.main.temp  }}°C</h6>
+                <span class="small back3" >{{ weatherData.sys.country  }}</span>
+              </div>
+              <ng-template #placeholder2 >
+                <div  class="d-flex flex-column text-center mt-5 mb-4">
+                <h6 class="display-4 mb-0 font-weight-bold back2"> {{ placehold2[0].tem  }}°C</h6>
+                <span class="small back3" >{{placehold2[1].countryname}}</span>
+              </div>
+              </ng-template>
+  
+              <div class="d-flex align-items-center">
+                <div class="flex-grow-1 in ">
+                  <div *ngIf="weatherData; else placeholder3"><i class="bi bi-wind fa-fw back3" ></i> <span class="ms-1">  {{ weatherData.wind.speed }} m/s
+                    </span></div>
+                    <ng-template #placeholder3>
+                      <div>
+                      <i class="bi bi-wind fa-fw back3" ></i> <span class="ms-1">{{ placehold3[0].speed }}m/s</span>
+                  </div>
+                  </ng-template>
+
+                  <div *ngIf="weatherData; else placeholder4"><i class="bi bi-droplet fa-fw back3" ></i> <span class="ms-1"> {{ weatherData.main.humidity }}%</span>
+                  </div>
+                  <ng-template #placeholder4 >
+                    <div>
+                    <i class="bi bi-droplet fa-fw back3" ></i> <span class="ms-1"> {{ placehold4[0].humidity }}%</span>
+                  </div>
+                  </ng-template>
+
+                  <div *ngIf="weatherData; else placeholder5 "><i class="bi bi-sun fa-fw back3" ></i> <span class="ms-1">{{ weatherData.weather[0].description }}</span>
+                  </div>
+                  <ng-template #placeholder5>
+                    <div>
+                    <i class="bi bi-sun fa-fw back3" ></i> <span class="ms-1">{{ placehold5[0].description }}</span></div>
+                  </ng-template>
+
+                </div>
+                <div >
+                  <div *ngIf="weatherData; else placeholder6 "><i class="bi bi-speedometer fa-fw back3" ></i> <span class="ms-1">{{ weatherData.main.pressure }} hPa
+                  </span></div>
+                  <ng-template #placeholder6>
+                    <div><i class="bi bi-speedometer fa-fw back3" ></i> <span class="ms-1">{{ placehold6[0].pressure }} hPa
+                  </span></div></ng-template>
+
+                <div *ngIf="weatherData; else placeholder7"><i class="bi bi-eye fa-fw back3" ></i> <span class="ms-1"> {{ weatherData.visibility }} meters</span>
+                </div>
+                <ng-template #placeholder7>
+                  <div><i class="bi bi-eye fa-fw back3" ></i> <span class="ms-1"> {{placehold7[0].visibility }} meters</span>
+                </div>
+                </ng-template>
+
+
+                <div *ngIf="weatherData; else placeholder8"><i class="bi bi-sunrise fa-fw back3" ></i> <span class="ms-1">{{weatherData.sys.sunrise}}</span>
+                </div>
+                <ng-template #placeholder8>
+                  <div><i class="bi bi-sunrise fa-fw back3" ></i> <span class="ms-1">{{placehold8[0].sunrise}}</span>
+                </div>
+                </ng-template>
+
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+
+     
+    </div>
+  </section>
+
+  
+<router-outlet></router-outlet>
